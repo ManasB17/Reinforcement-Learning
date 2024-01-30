@@ -1,5 +1,5 @@
 
-## Lecture-1
+# Lecture-1
 
 1. **Google DeepMind RL Course by David Silver**: https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&index=1
 2. **Slides**: https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf
@@ -11,8 +11,6 @@
  >- reward is rare(sparse feedback) which comes after a long action sequence for eg. in game of chess you win after a full game
  
 ## Introduction
-
-
 
 ## Key Terms
 | key-terms | Description |
@@ -51,5 +49,38 @@ Atari Games: +/- ve reward for increasing / decreasing score
 
 ## History and State:
 
-History is the sequence of observation, actions, reward
+History is the sequence of observation, actions, rewards:
+$H_{t}=A_1,O_1,R_1,...,A_t,O_t,R_t$
+What happens next depends on history. which means *Agent selects based on the history*, *The environment selects observation/reward*
 
+State is the information used to determine what happens next.
+In RL there are different state definition of state;
+1. Environment State:
+2. Agent State:
+3. Information State:
+Formally, State is the function of history.
+### Environment State $(S^{e}_{t})$
+
+- Is environment's private representation.
+- Info used in env to determine what happens next.
+
+"*The environment state is not usually visible to the agent*"
+Even if it is visible it may be irrelevant information.
+
+### Agent State $(S^{a}_{t})$
+
+- Is the agent's internal representation.
+- What info the agent uses to pick next action.
+- This is the information used by reinforcement learning algorithms.
+- It can be any function of history.
+
+### Information State(Markov State)
+
+- Contains all useful info from the history.
+- The state is Markov if and only if: $$P{[S_{t+1} | S_{t}]} = P[S_{t+1}| S_1,...,S_t]$$"*The future is independent of past given the present*"
+
+
+
+# Lecture-2
+
+## Markov Decision Processes
