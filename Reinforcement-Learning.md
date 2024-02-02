@@ -1,8 +1,10 @@
 
 # Lecture-1
 
-1. **Google DeepMind RL Course by David Silver**: https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&index=1
-2. **Slides**: https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf
+| S.N | Resource | Links |
+| ---- | ---- | ---- |
+| 1. | RL Course by David silver - Lecture 1 | [Video Link](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&index=1) |
+| 2. | Course slides - Lecture 1 | [Slides link](https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf) |
 
 >[! quote] fyi 
 > 1. What makes reinforcement learning different form other machine learning paradigm?
@@ -66,14 +68,14 @@ Think of this concept as a unified framework for certain common goal;
 - The goal is to build this entity brain. 
 - Is responsible for taking action.
 - Gets to see a world per step (Observation) and then takes an action and gets feedback based on the action taken to the world (Reward).
-![[Pasted image 20240202121539.png]]
+![Agent](./Images/Agent.png)
 
 #### Environment
 - The world where the agent performs actions.
 - Every action taken by the agent updates the state of the world and emits the state as observation.
 - Gives feedback to the agent based on the action it takes.
 
-![[Pasted image 20240202122403.png]]
+![Environment](./Images/Environment.png)
 
 #### The Relation Agent and Environment
 
@@ -88,30 +90,41 @@ Think of this concept as a unified framework for certain common goal;
 	- Provides a scalar Reward $R_t$
 ---
 ### History and State:
-
+**History**:
 - History is the sequence of observation, actions, rewards:
-	$H_{t}=A_1,O_1,R_1,...,A_t,O_t,R_t$
 
-What happens next depends on history. which means *Agent selects based on the history*, *The environment selects observation/reward*
+- History up-to timestamp $t$ is determined by sequence, observation and reward all the way till time stamp $t$.
+	  $H_{t}=A_1,O_1,R_1,...,A_t,O_t,R_t$
 
-State is the information used to determine what happens next. 
-In RL there are different state definition of state:
-1. Environment State:
-2. Agent State:
-3. Information State:
+- *"What happens next depends on history"*. which means *Agent selects action based on the history*, *The environment selects observation/reward based on history*.
 
-Formally, State is the function of history.
+
+**State**:
+- State is summary of the information used to determine what happens next. 
+- State replaces history since it is the summary of all the concise information needed to determine what happens next.
+- In RL there are different state definition of state:
+	1. Environment State:
+	2. Agent State:
+	3. Information State:
+
+Formally, State is the function of history. $S_t=f(H_t)$
+
 #### Environment State $(S^{e}_{t})$
 
 - Is environment's private representation.
-- Info used in env to determine what happens next.
+- Internal information used inside the environment to determine what happens next.
+	  **Example**: Imagine an environment as an Atari emulator with it's own set of internal representation state which helps emulator to determine next possible decisions to make.
 
-- "*The environment state is not usually visible to the agent*"
+- These state are some set of number that determine what happens next from environment perspective.
+- "*The environment state is not usually visible to the agent*". Hence the algorithms does not depend on those numbers.
 - Even if it is visible it may be irrelevant information.
+
+`Note:  Environment state does not provide relevant information to build algorithms.` 
 
 #### Agent State $(S^{a}_{t})$
 
 - Is the agent's internal representation.
+- 
 - What info the agent uses to pick next action.
 - This is the information used by reinforcement learning algorithms.
 - It can be any function of history.
@@ -122,6 +135,7 @@ Formally, State is the function of history.
 - The state is Markov if and only if: $$P{[S_{t+1} | S_{t}]} = P[S_{t+1}| S_1,...,S_t]$$"*The future is independent of past given the present*"
 
 
+---
 
 ## Key Terms
 | key-terms | Description |
