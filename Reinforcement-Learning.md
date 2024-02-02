@@ -136,7 +136,8 @@ Formally, State is the function of history. $S_t=f(H_t)$
 
 **The Rat Example**:
 Suppose we have three cases in an environment and a Rat as an Agent.
-![Rat](Rat.png)
+
+![Rat](./Images/Rat.png)
 
 
 ![Environment](./Images/Rat-Example.png)
