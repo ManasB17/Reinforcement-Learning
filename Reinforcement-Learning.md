@@ -67,14 +67,16 @@ Think of this concept as a unified framework for certain common goal;
 - The goal is to build this entity brain. 
 - Is responsible for taking action.
 - Gets to see a world per step (Observation) and then takes an action and gets feedback based on the action taken to the world (Reward).
-![Agent](Agent.png)
+
+![Agent](./Images/Agent.png)
 
 #### Environment
 - The world where the agent performs actions.
 - Every action taken by the agent updates the state of the world and emits the state as observation.
 - Gives feedback to the agent based on the action it takes.
 
-![Environment](Environment.png)
+
+![Environment](./Images/Environment.png)
 
 #### The Relation Agent and Environment
 
