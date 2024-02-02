@@ -25,7 +25,6 @@
 
 ## The Reinforcement Learning Problem
 
-
 ### Reward 
 - $R_{t}$ is a scalar feedback signal(Just a number)
 - Indicates how well the agent is doing at time stamp $t$.
@@ -68,14 +67,14 @@ Think of this concept as a unified framework for certain common goal;
 - The goal is to build this entity brain. 
 - Is responsible for taking action.
 - Gets to see a world per step (Observation) and then takes an action and gets feedback based on the action taken to the world (Reward).
-![Agent](./Images/Agent.png)
+![Agent](Agent.png)
 
 #### Environment
 - The world where the agent performs actions.
 - Every action taken by the agent updates the state of the world and emits the state as observation.
 - Gives feedback to the agent based on the action it takes.
 
-![Environment](./Images/Environment.png)
+![Environment](Environment.png)
 
 #### The Relation Agent and Environment
 
@@ -98,7 +97,6 @@ Think of this concept as a unified framework for certain common goal;
 
 - *"What happens next depends on history"*. which means *Agent selects action based on the history*, *The environment selects observation/reward based on history*.
 
-
 **State**:
 - State is summary of the information used to determine what happens next. 
 - State replaces history since it is the summary of all the concise information needed to determine what happens next.
@@ -110,7 +108,6 @@ Think of this concept as a unified framework for certain common goal;
 Formally, State is the function of history. $S_t=f(H_t)$
 
 #### Environment State $(S^{e}_{t})$
-
 - Is environment's private representation.
 - Internal information used inside the environment to determine what happens next.
 	  **Example**: Imagine an environment as an Atari emulator with it's own set of internal representation state which helps emulator to determine next possible decisions to make.
@@ -122,18 +119,33 @@ Formally, State is the function of history. $S_t=f(H_t)$
 `Note:  Environment state does not provide relevant information to build algorithms.` 
 
 #### Agent State $(S^{a}_{t})$
-
 - Is the agent's internal representation.
-- 
-- What info the agent uses to pick next action.
-- This is the information used by reinforcement learning algorithms.
+- Agents internal numerical representation used in algorithms that helps to take next action. 
 - It can be any function of history.
 
 #### Information State(Markov State)
 
 - Contains all useful info from the history.
 - The state is Markov if and only if: $$P{[S_{t+1} | S_{t}]} = P[S_{t+1}| S_1,...,S_t]$$"*The future is independent of past given the present*"
+- State is sufficient statistics for the future.(meaning history can be ignored.)
+- The environment state is Markov
+- The history is Markov.
 
+
+**The Rat Example**:
+Suppose we have three cases in an environment and a Rat as an Agent.
+![Rat](Rat.png)
+
+
+![Environment](./Images/Rat-Example.png)
+
+
+
+- The recent history, from last three sequence it is possible to be electricuted.
+
+- what if the state is to count the number of light number and the lever then it is possible to get a cheese.
+
+- However if we consider all of the sequence we might have hard time predicting and we have to perform the action in order to get the outcome.
 
 ---
 
