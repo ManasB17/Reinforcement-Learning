@@ -182,9 +182,10 @@ Formally this is a <mark style="background: #FF5582A6;">Partially Observable Mar
 	- Making the agent state to remember everything 
 	  (Take sequence of complete history $S^{a}_{t} = H_t$ (naive approach))
 	- Build beliefs of environment state: 
+	
 	  $$S^{a}_{t}=(P[S^{e}_{t=s^1],}...,P[S^{e}_{t}=s^n])$$
 	   It is a probabilistic or Bayesian approach where we don't know whats going on the environment but we want to determine where we think we are at the environment based on probabilistic distribution. [Explanation](https://youtu.be/2pWv7GOvuf0?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&t=3245) 
-	- Recurrent Neural Network: $S^a_{t} = σ(S^a_{t−1}W_s + O_tW_o )$
+	- Recurrent Neural Network:     $S^a_{t} = σ(S^a_{t−1}W_s + O_tW_o )$
 	  Agent state at timestamp is determined by a **linear combination of agent state at last time step with latest observation**.
 
 ------------ 
@@ -224,9 +225,13 @@ Formally this is a <mark style="background: #FF5582A6;">Partially Observable Mar
 ![RL-model](./Images/RL-model.png)
 
 Formally we can write these as:
+
 **Transition Models**
+
 $$P^{a}_{ss'}=P[S_{t+1}=S' | S_t=s, A_t=a]$$
+
   **Reward Models**
+  
   $$R^{a}_{s}=E[R_{t+1} | S_t=s, A_t=a]$$
 
 ---
