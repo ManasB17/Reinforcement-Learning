@@ -163,7 +163,6 @@ Suppose we have three cases in an environment and a Rat as an Agent.
 ### Fully Observable Environment
 
 - Agent directly observes environment state.(Type of environment where agent sees everything)
-  
   $$O_{t}= S^{a}_{t} = S^{e}_{t}$$
 	Agent state = environment state = information state
 
@@ -176,14 +175,13 @@ Formally, this is a <mark style="background: #FF5582A6;">Markov Decision Process
 	- A robot with camera vision is not told about it's absolute location.
 	- A trading agent only observes current prices, and might not know the trends.
 	- A poker playing agent who only observes public cards and doesn't know the content of those card.
-- *Agent state  $\neq$  environment state*
+$$Agent\ state \neq  environment\ state$$
 
 Formally this is a <mark style="background: #FF5582A6;">Partially Observable Markov Decision Process(POMDP)</mark>.
 - Agent must build its own state representation $S^{a}_{t}$ (we have to build this state)
 	- Making the agent state to remember everything 
 	  (Take sequence of complete history $S^{a}_{t} = H_t$ (naive approach))
 	- Build beliefs of environment state: 
-	
 	  $$S^{a}_{t}=(P[S^{e}_{t=s^1],}...,P[S^{e}_{t}=s^n])$$
 	  
 	   It is a probabilistic or Bayesian approach where we don't know whats going on the environment but we want to determine where we think we are at the environment based on probabilistic distribution. [Explanation](https://youtu.be/2pWv7GOvuf0?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&t=3245) 
@@ -227,13 +225,12 @@ Formally this is a <mark style="background: #FF5582A6;">Partially Observable Mar
 ![RL-model](./Images/RL-model.png)
 
 Formally we can write these as:
-**Transition Models**
 
+**Transition Models**
 $$P^{a}_{ss'}=P[S_{t+1}=S' | S_t=s, A_t=a]$$
 
 
   **Reward Models**
-  
   $$R^{a}_{s}=E[R_{t+1} | S_t=s, A_t=a]$$
 
 ---
