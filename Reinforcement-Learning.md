@@ -6,7 +6,7 @@
 | 1. | RL Course by David silver - Lecture 1 | [Video Link](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ&index=1) |
 | 2. | Course slides - Lecture 1 | [Slides link](https://www.davidsilver.uk/wp-content/uploads/2020/03/intro_RL.pdf) |
 
->[! quote] fyi 
+>[! quote]
 > 1. What makes reinforcement learning different form other machine learning paradigm?
 >- There is no supervisor
  >- only thing we have is the feedback(positive or negative)
@@ -217,8 +217,103 @@ Formally this is a <mark style="background: #FF5582A6;">Partially Observable Mar
 
 #### Model
 - A model predicts what environment will do next.
+- There are two parts of a model: i) transitional model ii) Reward Model.
 
 
+
+![RL-model](./Images/RL-model.png)
+
+Formally we can write these as:
+**Transition Models**
+$$P^{a}_{ss'}=P[S_{t+1}=S' | S_t=s, A_t=a]$$
+  **Reward Models**
+  $$R^{a}_{s}=E[R_{t+1} | S_t=s, A_t=a]$$
+
+---
+
+### Categorizing RL agent
+
+**Category-1**:
+![RL-agent-Categoty-1](./Images/category-RL-agent-1.png)
+
+- These are categorized based on what the agent contains.
+
+- So for an RL agent to be value based, it has to have a value function and no policy or implicit policy. Picks values greedily based on Value Function.
+
+- For Policy based RL agent, it has to have a policy defined but no Value function. Meaning we explicitly define policies and follow those policy without interference.
+
+- For Actor critic RL agent, it should have both a policy and a value function.  Combines both and tries to get best form both.
+
+**Category-2**:
+![RL-agent-Category-2](./Images/category-RL-agent-2.png)
+
+
+
+
+### Taxonomy of RL Agent
+
+
+
+
+---
+## Problems within Reinforcement Learning
+
+### Learning and Planning
+
+- There are two main problem in sequential decision making
+	
+	- **Reinforcement Learning**:
+		- env us initially unknown
+		- agent interacts with env
+		- the agent improves its policy
+	
+	- **Planning**:
+		- The model of env is known. We tell every details
+		- The agent performs internal computations with model and does not interact externally. (Thinks and plans)
+		- The agent improves its policy
+
+These are two diff setups  of problems in RL;  the env is unknown in RL and in Planning env is known.
+
+
+
+**Example**: RL 
+
+![Problem with RL](./Images/problem-RL-example-1.png)
+- Rules of the game are unknown
+- Learns directly from interactive game-play
+- pick action on joystick, moves and scores
+
+
+**Example**: Planning
+
+
+- Rules of games are known
+- Can query emulator
+	- Perfect model inside agent's brain
+- If action a is taken from state s: (Thinks like: "*if I move joystick where will I end up next*")
+	- what would the next step be?
+	- what would the score be?
+- Plan ahead to find optimal policy.
+
+---
+
+### Exploration and Exploitation
+
+- RL is a trail and error learning
+- Agents should discover best policy based on it's experiences with the environment and without losing too much reward along the way.
+-  Exploration finds more info about the env.
+- Exploitation exploits known info to maximize reward.
+
+**Example**: 
+- Exploitation: go to favorite restaurant every time
+- Exploitation: Trying new instead of favorite restaurant
+
+---
+### Prediction and Control
+
+- **Prediction**: How well do I do based on my current policy 
+
+- **Control**: Optimize the future with best possible policy.
 
 ---
 #### Timestamp from the Lecture-1
@@ -252,7 +347,7 @@ Formally this is a <mark style="background: #FF5582A6;">Partially Observable Mar
 | [1:24:25](https://www.youtube.com/watch?v=2pWv7GOvuf0&t=5065s)   | Prediction vs. Control. |
 
 ---
-## Key Terms
+## Glossary
 | key-terms | Description |
 | ---- | ---- |
 | Agent | An entity that is being trained. |
