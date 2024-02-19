@@ -368,3 +368,17 @@ These are two diff setups  of problems in RL;  the env is unknown in RL and in P
 # Lecture-2
 
 ## Markov Decision Processes
+
+> [!quote] **Outline** 
+> - Markov Processes
+> - Markov Reward process
+> - Markov Decision process(MDP)
+> - Extension to MDP
+
+---
+## Markov Processes
+### Introduction to MDPs
+- MDP formally describe an environment of Reinforcement learning.
+- In this case the environment is fully observable. The current state completely characterizes the process.
+- Almost all RL problems can be formalized as MDPs
+- 
