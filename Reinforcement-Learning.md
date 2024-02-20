@@ -13,7 +13,7 @@
  >- reward is rare(sparse feedback) which comes after a long action sequence for eg. in game of chess you win after a full game
 
 ----
-## Introduction
+## Introduction to Reinforcement Learning(RL)
 
 - Science of Decision Making.
 - A trail and error paradigm.
@@ -364,21 +364,3 @@ These are two diff setups  of problems in RL;  the env is unknown in RL and in P
 | Value function: | A function of state or state action pair that estimates how good it is for an agent to be in a given state or perform an action in a given state.<br><br>It can also be thought as, function that is prediction of future reward.
 
 ---
-
-# Lecture-2
-
-## Markov Decision Processes
-
-> [!quote] **Outline** 
-> - Markov Processes
-> - Markov Reward process
-> - Markov Decision process(MDP)
-> - Extension to MDP
-
----
-## Markov Processes
-### Introduction to MDPs
-- MDP formally describe an environment of Reinforcement learning.
-- In this case the environment is fully observable. The current state completely characterizes the process.
-- Almost all RL problems can be formalized as MDPs
-- 
