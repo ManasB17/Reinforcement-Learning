@@ -228,11 +228,17 @@ Agent state at timestamp is determined by a **linear combination of agent state 
 Formally we can write these as:
 
 **Transition Models**
-$$P^{a}_{ss'}=P[S_{t+1}=S' | S_t=s, A_t=a]$$
+
+$$
+P^{a}_{ss'}=P[S_{t+1}=S' | S_t=s, A_t=a]
+$$
 
 
   **Reward Models**
-  $$R^{a}_{s}=E[R_{t+1} | S_t=s, A_t=a]$$
+  
+$$
+  R^{a}_{s}=E[R_{t+1} | S_t=s, A_t=a]
+$$
 
 ---
 
